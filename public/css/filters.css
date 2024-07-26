@@ -1,0 +1,26 @@
+.filter {
+    margin-top: 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.filter:hover {
+    opacity: 1;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.filters {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    overflow-x: auto; 
+}
+
+.filter-icons {
+    font-size: 1.2rem;
+}

@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-3" style="padding-bottom: 10px;">
+    <div class="col-8 offset-2">
+        <h3>Create a new Listing</h3>
+        <form method="post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+              <label class="form-label col-4">Title</label>
+              <input name="title" type="text" class="form-control" required>
+              <div class="invalid-feedback">
+                Please choose a Title.
+              </div>
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="description" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Please add description.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input name="image" type="file" class="form-control" required>
+            </div>
+    
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label class="form-label">Price</label>
+                    <input name="price" type="number" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid price
+                      </div>
+                </div>
+            
+                <div class="mb-3 col-md-8">
+                    <label class="form-label">Country</label>
+                    <input name="country" type="text" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please choose a Country
+                      </div>
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label">Location</label>
+                <input name="location" type="text" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please choose a Location.
+                  </div>
+            </div>
+        
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

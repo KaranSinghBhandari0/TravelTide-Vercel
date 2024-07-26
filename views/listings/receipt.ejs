@@ -1,0 +1,19 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-3">
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Congratulations Payment Successfull !!!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div>
+        <h3>Here are Your payment Details</h3>
+        <p>Name : <%= currUser.username %></p>
+        <p>Destination : <%= currListing.title %></p>
+        <p>Tickets : <%= tickets %></p>
+        <p>Amount paid : ₹ <%= currListing.price * tickets %> </p>
+        <p>Mode of payment : Card</p>
+        <p>Time of Payment : <%= time %></p>
+    </div>
+</div>

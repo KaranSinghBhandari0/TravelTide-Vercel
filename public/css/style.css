@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 6.74rem;
+}
+.container {
+    flex: 1;
+}
+
+.fa-compass {
+    font-size: 2rem;
+    color: #fe424d;
+}
+
+.navbar {
+    background-color: #f0f0f0;
+}
+
+@media screen and (min-width: 2561px) {
+    .navbar {
+        width: 2560px;
+        margin: 0 auto;
+    }
+}
+
+.nav-link {
+    font-weight: 600;
+    color: #222222 !important;
+}
+
+/* navbar */
+.navbar-Search {
+    border-radius: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.navbar-Search-btn {
+    border: none;
+    color: white;
+    background-color: #fe424d;
+}
+
+/* cards */
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-idx:hover {
+    opacity: 0.9;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0px !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* footer */
+.footer-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.footer i {
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 15px;
+}
+.footer i:hover {
+    color: #fff;
+}
+
+.footer {
+    color: #DDD;
+    background-color: #2b3035;;
+    padding: 5px !important;
+}
+
+.footer a {
+    color: #DDD;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.review-div {
+    border: 1px solid grey !important;
+}
+
+
+
+/* review stars */
+.checked {
+    color: orange;
+}
+.unchecked {
+    color: grey;
+}
+
+
+
+/* show lisiting */
+@media screen and (max-width: 992px) {
+    .show-listing-div {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-review {
+        margin: 0 auto;
+    }
+    .edit-form-div {
+        margin: 2rem auto !important;
+    }
+}
+
+
+
+/* payment page related  */
+.payment-div {
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: rgba(28, 28, 28, 0.15) 10px 1.2rem 7rem;
+}
+
+.payment-partners-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.payment-partners-div img {
+    height: 1.9rem;
+    width: 2.3rem;
+}
+
+
+/* login & signup */
+.login-box {
+    background-color: #fff;
+    padding: 30px 10px;
+    border-radius: 6px;
+    box-shadow: rgba(28, 28, 28, 0.15) 10px 1.2rem 7rem;
+    min-width: 300px;
+}
+
+#login-btn {
+    background-color: #42b72a;
+    color: white;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#Sign-Up-btn {
+    background-color: #0866ff;
+    color: white;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#or-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+}
+#or-div p{
+    margin: 0 5px;
+}
+
+
+/* carousel */
+.carousel-item {
+    width: 100% !important;
+    height: 550px;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+@media screen and (max-width: 620px) {
+    .carousel-item {
+        height: 350px;
+    }
+}

@@ -1,0 +1,45 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-3">
+    <div class="card payment-div row offset-3 col-sm-5 col-8 mt-3 box-review login-box">
+        <div class="card-body">
+            <h4 style="text-align: center;">Payment</h4>
+            <hr>
+            <h6>Destination : <%=currListing.title%></h6>
+            <br>
+
+            <div class="payment-partners-div">
+                <img src="https://d28wu8o6itv89t.cloudfront.net/images/Visadebitcardpng-1599584312349.png">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/HSBC_logo_%282018%29.svg/1024px-HSBC_logo_%282018%29.svg.png"  style=" width: 3.5rem;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png">
+            </div>
+            <br>
+            
+            <form method="get" action="/listings/<%= currListing._id %>/paymentdone/<%= quantity %>">
+                <div class="mb-3" >
+                <label class="form-label">Name on Card </label>
+                <input class="form-control" required
+                oninvalid="this.setCustomValidity('Enter Your Full Name on Card')" oninput="this.setCustomValidity('')">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" >Card Number</label>
+                    <input minlength="16" maxlength="16" class="form-control" required
+                    oninvalid="this.setCustomValidity('Card number should be 16 digit long')" oninput="this.setCustomValidity('')">
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-6">
+                        <label class="form-label">Expiry Date</label>
+                        <input minlength="5" maxlength="5" class="form-control" placeholder="MM/YY" required
+                        oninvalid="this.setCustomValidity('please enter MM/YY format')" oninput="this.setCustomValidity('')">
+                    </div>
+                    <div class="mb-3 col-6">
+                        <label class="form-label">CVV</label>
+                        <input minlength="3" maxlength="3" class="form-control" required
+                        oninvalid="this.setCustomValidity('CVV should be 16 digit long')" oninput="this.setCustomValidity('')">
+                    </div>
+                </div>
+                <button class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-lock"></i> Pay ₹ <%=currListing.price*quantity %></button>
+            </form>
+        </div>
+    </div>
+</div>

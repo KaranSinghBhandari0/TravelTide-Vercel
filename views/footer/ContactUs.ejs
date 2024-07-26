@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-3">
+  <form method="get" action="/footer/helpDone" class="col-8 col-lg-6 offset-3 mt-3 needs-validation" novalidate>
+      <h2>Contact us</h2>
+      <br>
+
+      <div class="mb-3">
+          <label class="form-label">Your Name</label>
+          <input class="form-control" required>
+        </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+      </div>
+      <div class="form-floating mb-3">
+          <p>feedback</p>
+          <textarea class="form-control" required></textarea>
+      </div>
+      <button class="btn btn-primary">Submit</button>
+  </form>
+</div>

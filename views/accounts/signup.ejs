@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-3">
+    <div class="row offset-3 col-sm-6 col-8 mt-3 box-review login-box">
+        <h3 style="text-align: center;">SignUp on TravelTide</h3>
+        <form class="mt-3 needs-validation" novalidate action="/account/signup" method="post">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user" ></i></span>
+                <input type="text" class="form-control" name="username" required placeholder="Username">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                <input type="email" class="form-control" name="email" required placeholder="e-mail">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock" id="pass-icon"></i></span>
+                <input type="password" class="form-control" name="password" required placeholder="Pasword">
+            </div>
+            <div class="mb-3" style="text-align: center;">
+                <button id="Sign-Up-btn">SignUp</button>
+            </div>
+            <div id="or-div">
+                <hr width="40%" size="2">
+                <p>or</p>
+                <hr width="40%" size="2">
+            </div>
+            <div class="mb-3" style="text-align: center;">
+                <p>Already have an account? <a href="/account/login">Login</a> </p>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container">
+    <% for(listing of allListings)  { %>
+        <div class="col-8 offset-3 mt-3 show-listing-div">
+            <div class="card-show" style="width: 80%;">
+                <a href="/listings/<%= listing._id %>">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="" style="height: 33vh">
+                </a>
+                <div class="card-body">
+                    <h3><%= listing.title %></h3>
+                </div>
+                <a href="/listings/<%= listing._id %>" class="btn btn-info">Explore</a>
+            </div>
+        </div>
+        <hr>
+    <% } %>
+</div>

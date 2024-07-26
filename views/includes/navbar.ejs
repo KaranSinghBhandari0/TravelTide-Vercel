@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/listings">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/listings/new">Add new Listing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user user-account-logo" style="font-size: 1.2rem;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <% if(!currUser) { %> 
+            <li><a class="dropdown-item" href="/account/signup">Create new Account</a></li>
+            <li><a class="dropdown-item" href="/account/login">Login</a></li>
+            <% } %>
+            <% if(currUser) { %>
+            <li><a class="dropdown-item" href="/account/logout">Logout</a></li>
+            <% } %>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex  needs-validation" method="post" action="/listings/search" novalidate>
+        <input name="country" class="form-control me-2 navbar-Search" type="search" placeholder="Search" required>
+        <button class="navbar-Search navbar-Search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>

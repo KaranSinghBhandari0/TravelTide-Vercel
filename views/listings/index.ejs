@@ -1,0 +1,83 @@
+<% layout("/layouts/boilerplate") %>
+
+<!-- carousel -->
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item  active">
+      <img src="/images/Carousel_img1.png" class="d-block w-100 carousel-images">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/Carousel_img2.webp" class="d-block w-100 carousel-images">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/Carousel_img3.jpg" class="d-block w-100 carousel-images">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container mt-3">
+  <div class="filters">
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-fire"></i>
+        <p>Trending</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-bed"></i>
+        <p>Rooms</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-person-swimming"></i>
+        <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-mountain"></i>
+        <p>Mountains</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-ship"></i>
+        <p>Boats</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-brands fa-fort-awesome"></i>
+        <p>Castles</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-snowflake"></i>
+        <p>Artic</p>
+    </div>
+    <div class="filter">
+        <i class="filter-icons fa-solid fa-cow"></i>
+        <p>Farms</p>
+    </div>
+</div>
+
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let listing of allListings) { %>
+        <a href="/listings/<%= listing._id%>" class="listing-link">
+            <div class="card col card-idx">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="" style="height: 20rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b>
+                        <br>
+                        ₹<%= listing.price %> / night
+                    </p>
+                </div>
+            </div>
+        </a>
+    <% } %>
+  </div>
+</div>
