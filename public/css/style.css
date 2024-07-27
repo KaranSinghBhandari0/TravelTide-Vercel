@@ -213,6 +213,7 @@ body {
 .carousel-item {
     width: 100% !important;
     height: 550px;
+    transition: transform 2s ease;
 }
 
 .carousel-item img {
