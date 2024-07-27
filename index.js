@@ -90,6 +90,7 @@ app.get("/", (req,res)=> {
 })
 
 
+
 // listing routes
 const listings = require('./routes/listing.js');
 app.use("/listings", listings);
