@@ -15,8 +15,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const user = require('./models/user.js');
 
-let DB_url = 'mongodb://127.0.0.1:27017/wanderlust';
-// let DB_url = process.env.ATLAS_URL;
+// let DB_url = 'mongodb://127.0.0.1:27017/wanderlust';
+let DB_url = process.env.ATLAS_URL;
 
 main()
     .then(()=> {
