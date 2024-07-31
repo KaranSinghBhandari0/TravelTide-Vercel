@@ -24,34 +24,6 @@ body {
     color: #fe424d;
 }
 
-.navbar {
-    background-color: #f0f0f0;
-}
-
-@media screen and (min-width: 2561px) {
-    .navbar {
-        width: 2560px;
-        margin: 0 auto;
-    }
-}
-
-.nav-link {
-    font-weight: 600;
-    color: #222222 !important;
-}
-
-/* navbar */
-.navbar-Search {
-    border-radius: 2rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-.navbar-Search-btn {
-    border: none;
-    color: white;
-    background-color: #fe424d;
-}
-
 /* cards */
 .card {
     border: none !important;

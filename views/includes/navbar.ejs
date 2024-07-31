@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,5 +32,66 @@
         <button class="navbar-Search navbar-Search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
+  </div>
+</nav> -->
+
+<!-- navbar -->
+<nav>
+  <a href="/listings"><i class="fa-solid fa-compass logo"></i></a>
+
+  <form class="Search-form needs-validation" method="post" action="/listings/search" novalidate>
+      <input name="country" class="form-control me-2 navbar-Search" type="search..." placeholder="Search" required>
+      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+
+  <div class="nav-link-div">
+      <a href="/listings/new" class="nav-links" id="newListing"><i class="fa-solid fa-plus"></i> new</a>
+      <div class="nav-item dropdown nav-links">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user user-account-logo" style="font-size: 1.2rem;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <% if(!currUser) { %> 
+              <li><a class="dropdown-item" href="/account/signup">Create new Account</a></li>
+              <li><a class="dropdown-item" href="/account/login">Login</a></li>
+              <% } %>
+              <% if(currUser) { %>
+              <li><a class="dropdown-item" href="/account/logout">Logout</a></li>
+              <% } %>
+          </ul>
+      </div>
+  </div>
+
+  <!-- sidebar -->
+  <button class="btn" id="offcanvasBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fa-solid fa-bars menu-icon"></i></button>
+
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">TravelTide</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <form  class="Search-form needs-validation" method="post" action="/listings/search" novalidate>
+          <input name="country" class="form-control me-2 navbar-Search" type="search..." placeholder="Search" required>
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <div class="sidebar-nav-link-div">
+          <a href="/listings/new" class="nav-links" id="newListing"><i class="fa-solid fa-plus"></i> new</a>
+          <div class="nav-item dropdown nav-links">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user user-account-logo" style="font-size: 1.2rem;"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <% if(!currUser) { %> 
+                  <li><a class="dropdown-item" href="/account/signup">Create new Account</a></li>
+                  <li><a class="dropdown-item" href="/account/login">Login</a></li>
+                  <% } %>
+                  <% if(currUser) { %>
+                  <li><a class="dropdown-item" href="/account/logout">Logout</a></li>
+                  <% } %>
+              </ul>
+          </div>
+      </div>
+  </div>
   </div>
 </nav>
