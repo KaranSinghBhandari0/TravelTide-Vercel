@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 const wrapAsync = require("../utils/wrapAsync");
 const Listing = require('../models/listing.js');
-const { isLoggedIn } = require('../middlewares.js');
-const { isOwner } = require('../middlewares.js');
+const { isLoggedIn, isOwner } = require('../middlewares.js');
 const multer = require('multer');
 const { storage } = require('../cloudConfig.js');
 const upload = multer({ storage });
@@ -20,7 +19,7 @@ router.get("/new", isLoggedIn, (req, res) => {
 });
 
 // Create new listing (POST request to handle form submission with multiple images)
-router.post("/", isLoggedIn, upload.array('image'), wrapAsync(async (req, res, next) => {
+router.post("/", isLoggedIn, upload.array('images'), wrapAsync(async (req, res, next) => {
     let newListing = new Listing({
         title: req.body.title,
         description: req.body.description,
@@ -67,13 +66,13 @@ router.get("/:id/update", isLoggedIn, isOwner, wrapAsync(async (req, res) => {
 }));
 
 // Update listing (PATCH request to handle form submission with multiple images)
-router.patch("/:id", isLoggedIn, isOwner, upload.array('image'), wrapAsync(async (req, res) => {
+router.patch("/:id", isLoggedIn, isOwner, upload.array('images'), wrapAsync(async (req, res) => {
     let { id } = req.params;
     let { title, description, price, location, country } = req.body;
     
     let updatedListing = await Listing.findByIdAndUpdate(id, {
         title, description, price, location, country
-    });
+    }, { new: true });  // Ensure updatedListing is the updated document
 
     // If new images are uploaded, append them
     if (req.files.length) {
