@@ -67,7 +67,7 @@ router.get("/:id/update", isLoggedIn, isOwner,  wrapAsync (async (req,res)=> {
     }
 }))
 
-router.patch("/:id", isLoggedIn, isOwner, upload.single('image'), wrapAsync (async (req,res)=> {
+router.patch("/:id", isLoggedIn, isOwner, upload.array('image'), wrapAsync (async (req,res)=> {
     let {id} = req.params;
     let {title, description, price, location, country, image} = req.body;
 
