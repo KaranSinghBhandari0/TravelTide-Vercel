@@ -64,24 +64,20 @@
     </div>
 </div>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
-  <% for(let listing of allListings) { %>
-      <a href="/listings/<%= listing._id%>" class="listing-link">
-          <div class="card col card-idx">
-              <% if(listing.images && listing.images.length > 0) { %>
-                  <img src="<%= listing.images[0].url %>" class="card-img-top" alt="<%= listing.title %>" style="height: 20rem;">
-              <% } else { %>
-                  <img src="/path-to-default-image.jpg" class="card-img-top" alt="No image available" style="height: 20rem;">
-              <% } %>
-              <div class="card-body">
-                  <p class="card-text">
-                      <b><%= listing.title %></b>
-                      <br>
-                      ₹<%= listing.price %> / night
-                  </p>
-              </div>
-          </div>
-      </a>
-  <% } %>
-</div>
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let listing of allListings) { %>
+        <a href="/listings/<%= listing._id%>" class="listing-link">
+            <div class="card col card-idx">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="" style="height: 20rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b>
+                        <br>
+                        ₹<%= listing.price %> / night
+                    </p>
+                </div>
+            </div>
+        </a>
+    <% } %>
+  </div>
 </div>
