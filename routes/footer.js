@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router({mergeParams:true});
-const multer  = require('multer');
-const {storage} = require('../cloudConfig.js');
 
 router.get("/privacy", (req,res)=> {
     res.render("footer/privacy.ejs");
