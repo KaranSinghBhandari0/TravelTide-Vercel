@@ -19,7 +19,7 @@ router.get("/new", isLoggedIn, (req,res)=> {
     res.render("listings/new.ejs");
 })
 
-router.post("/", isLoggedIn, upload.single('image'), wrapAsync ( async (req,res,next) => {
+router.post("/", isLoggedIn, upload.array('image'), wrapAsync ( async (req,res,next) => {
     let url = req.file.path;
     let filename = req.file.filename;
 
@@ -67,7 +67,7 @@ router.get("/:id/update", isLoggedIn, isOwner,  wrapAsync (async (req,res)=> {
     }
 }))
 
-router.patch("/:id", isLoggedIn, isOwner, upload.single('image'), wrapAsync (async (req,res)=> {
+router.patch("/:id", isLoggedIn, isOwner, upload.array('image'), wrapAsync (async (req,res)=> {
     let {id} = req.params;
     let {title, description, price, location, country, image} = req.body;
 
