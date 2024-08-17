@@ -1,11 +1,15 @@
 <% layout("/layouts/boilerplate") %>
 
 <div class="container">
-    <% for(listing of allListings)  { %>
+    <% for (let listing of allListings) { %>
         <div class="col-8 offset-3 mt-3 show-listing-div">
             <div class="card-show" style="width: 80%;">
                 <a href="/listings/<%= listing._id %>">
-                    <img src="<%= listing.image.url %>" class="card-img-top" alt="" style="height: 33vh">
+                    <% if (listing.images && listing.images.length > 0) { %>
+                        <img src="<%= listing.images[0].url %>" class="card-img-top" alt="Listing Image" style="height: 33vh">
+                    <% } else { %>
+                        <img src="/path-to-default-image.jpg" class="card-img-top" alt="No image available" style="height: 33vh">
+                    <% } %>
                 </a>
                 <div class="card-body">
                     <h3><%= listing.title %></h3>
@@ -16,3 +20,4 @@
         <hr>
     <% } %>
 </div>
+
