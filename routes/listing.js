@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router({ mergeParams: true });
 const wrapAsync = require("../utils/wrapAsync");
 const Listing = require('../models/listing.js');
+const cloudinary = require('cloudinary').v2;
 const { isLoggedIn, isOwner } = require('../middlewares.js');
 const multer = require('multer');
 
