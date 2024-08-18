@@ -107,7 +107,6 @@ app.use("/account", User);
 const footer = require('./routes/footer.js');
 app.use("/footer", footer);
 
-
 // undefined path 
 app.all("*", (req,res,next) => {
     next(new ExpressError(404, `Error 404 Page Not Found!!!`));

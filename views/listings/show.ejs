@@ -4,7 +4,7 @@
     <div class="col-8 offset-3 mt-3 show-listing-div">
         <h3><%= listing.title %></h3>
             <div class="card card-show" style="width: 80%;">
-                <img src="<%= listing.image.url %>" class="card-img-top" alt="" style="height: 33vh">
+                <img src="<%= listing.images[listing.images.length-1].url %>" class="card-img-top" alt="" style="height: 33vh">
                 <div class="card-body">
                     <b><i>Owned By : <%=listing.owner.username  %> </i></b>
                     <li><%= listing.description %></li>

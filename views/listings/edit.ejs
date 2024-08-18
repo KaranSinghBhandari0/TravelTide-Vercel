@@ -23,12 +23,12 @@
         <div class="mb-3">
             Previous Image 
             <br>
-            <img src="<%= listing.image.url %>" alt=""  style="width: 100px; height: 100px; background-size: cover;" class="mt-0">
+            <img src="<%= listing.images[listing.images.length-1].url %>" alt=""  style="width: 100px; height: 100px; background-size: cover;" class="mt-0">
         </div>
     
         <div class="mb-3">
             <label for="image" class="form-label">Upload New Image</label>
-            <input name="image" type="file" class="form-control">
+            <input name="images" type="file" class="form-control" multiple>
         </div>
 
         <div class="row">
