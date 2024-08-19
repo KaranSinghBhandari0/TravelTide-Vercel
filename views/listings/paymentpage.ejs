@@ -5,7 +5,7 @@
         <div class="card-body">
             <h4 style="text-align: center;">Payment</h4>
             <hr>
-            <h6>Destination : <%=currListing.title%></h6>
+            <h6>Destination : <%=listing.title%></h6>
             <br>
 
             <div class="payment-partners-div">
@@ -15,7 +15,7 @@
             </div>
             <br>
             
-            <form method="get" action="/listings/<%= currListing._id %>/paymentdone/<%= quantity %>">
+            <form method="get" action="/listings/<%= listing._id %>/paymentdone/<%= quantity %>">
                 <div class="mb-3" >
                 <label class="form-label">Name on Card </label>
                 <input class="form-control" required
@@ -38,7 +38,7 @@
                         oninvalid="this.setCustomValidity('CVV should be 16 digit long')" oninput="this.setCustomValidity('')">
                     </div>
                 </div>
-                <button class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-lock"></i> Pay ₹ <%=currListing.price*quantity %></button>
+                <button class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-lock"></i> Pay ₹ <%=listing.price*quantity %></button>
             </form>
         </div>
     </div>
